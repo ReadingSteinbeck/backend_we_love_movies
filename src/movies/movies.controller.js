@@ -38,6 +38,16 @@ async function readReviews(req, res, next) {
     data: await moviesService.readReviews(res.locals.movie.movie_id),
   });
 }
+// async function readReviews(req, res, next) {
+//   const reviews = await moviesService.readReviews(res.locals.movie.movie_id);
+//   reviews.map(async (review) => {
+//     console.log(review.critic_id);
+//     review.critic = await moviesService.readCritics(review.critic_id);
+//   });
+//   res.json({
+//     data: await moviesService.readReviews(res.locals.movie.movie_id),
+//   });
+// }
 
 module.exports = {
   read: [asyncErrorBoundary(movieExists), read],

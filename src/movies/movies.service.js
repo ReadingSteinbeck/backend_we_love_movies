@@ -53,6 +53,12 @@ function readReviews(movieId) {
       });
     });
 }
+// function readReviews(movieId) {
+//   return knex("reviews as r").select("*").where({ "r.movie_id": movieId });
+// }
+// function readCritic(criticId) {
+//   return knex("critic as c").select("*").where({ "c.critic_id": criticId });
+// }
 
 module.exports = {
   list,
@@ -60,4 +66,5 @@ module.exports = {
   read,
   readTheaters,
   readReviews,
+  //readCritic,
 };
